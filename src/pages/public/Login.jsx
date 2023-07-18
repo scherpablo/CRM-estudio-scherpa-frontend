@@ -4,8 +4,8 @@ import { Link, useNavigate } from "react-router-dom"
 import Alerts from "../../components/Alerts"
 import useAuth from "../../hooks/useAuth"
 
-// const backendUrl = import.meta.env.VITE_BACKEND_URL;
-const backendUrl = import.meta.env.VITE_BACKEND_URL_PROD;
+const backendUrl = import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_BACKEND_URL_PROD;
+// const backendUrl = import.meta.env.VITE_BACKEND_URL_PROD;
 const apiAdminsUrl = import.meta.env.VITE_API_ADMINS_URL;
 
 const authUserUrl = backendUrl + apiAdminsUrl + `/login`;

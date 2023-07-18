@@ -3,8 +3,8 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import Alerts from "../../components/Alerts";
 
-// const backendUrl = import.meta.env.VITE_BACKEND_URL;
-const backendUrl = import.meta.env.VITE_BACKEND_URL_PROD;
+const backendUrl = import.meta.env.VITE_BACKEND_URL|| import.meta.env.VITE_BACKEND_URL_PROD;
+// const backendUrl = import.meta.env.VITE_BACKEND_URL_PROD;
 const apiAdminsUrl = import.meta.env.VITE_API_ADMINS_URL;
 
 const passwordChangeUrl = backendUrl + apiAdminsUrl + `/password-change`;
