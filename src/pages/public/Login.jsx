@@ -4,7 +4,10 @@ import { Link, useNavigate } from "react-router-dom"
 import Alerts from "../../components/Alerts"
 import useAuth from "../../hooks/useAuth"
 
-const authUserUrl = import.meta.env.VITE_AUTH_USER_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+const apiAdminsUrl = import.meta.env.VITE_API_ADMINS_URL;
+
+const authUserUrl = backendUrl + apiAdminsUrl + `/login`;
 
 const Login = () => {
     const [email, setEmail] = useState('')

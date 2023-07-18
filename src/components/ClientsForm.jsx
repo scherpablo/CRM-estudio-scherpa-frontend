@@ -39,9 +39,9 @@ const Form = () => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        if ([name, lastName].includes('')) {
+        if ([name, lastName, birthdate].includes('')) {
             setAlert({
-                msg: 'Nombre y Apellido Obligatorios',
+                msg: 'Nombre, Apellido y Nacimineto Obligatorios',
                 error: true
             });
             return;

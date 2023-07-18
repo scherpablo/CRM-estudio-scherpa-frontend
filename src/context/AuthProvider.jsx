@@ -2,9 +2,12 @@
 import { useState, useEffect, createContext } from "react";
 import axios from "axios";
 
-const userAuthProfileUrl = import.meta.env.VITE_AUTH_USER_PROFILE_URL;
-const updateClientProfileUrl = import.meta.env.VITE_UPDATE_CLIENT_PROFILE_URL;
-const updateAdminPasswordUrl = import.meta.env.VITE_UPDATE_ADMIN_PASSWORD_URL;  
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+const apiAdminsUrl = import.meta.env.VITE_API_ADMINS_URL;
+
+const userAuthProfileUrl = backendUrl + apiAdminsUrl + `/profile`;
+const updateClientProfileUrl = backendUrl + apiAdminsUrl + `/profile`;
+const updateAdminPasswordUrl = backendUrl + apiAdminsUrl + `/update-password`;  
 
 const AuthContext = createContext();
 

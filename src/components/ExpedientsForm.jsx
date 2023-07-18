@@ -31,9 +31,9 @@ const ExpedientsForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        if ([number, clientRelation].includes('')) {
+        if ([number, startDate, clientRelation].includes('')) {
             setAlert({
-                msg: 'Numero de Expte y Cliente Obligatorios',
+                msg: 'Numero de Expte, Fecha y Cliente Obligatorios',
                 error: true
             })
             setTimeout(() => {

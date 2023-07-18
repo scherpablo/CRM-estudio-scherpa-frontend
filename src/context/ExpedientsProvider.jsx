@@ -4,11 +4,15 @@ import axios from "axios";
 
 const ExpedientsContext = createContext();
 
-const createExpedientUrl = import.meta.env.VITE_CREATE_EXPEDIENT_URL;
-const getExpedientsUrl = import.meta.env.VITE_GET_EXPEDIENTS_URL;
-const updateExpedientUrl = import.meta.env.VITE_UPDATE_EXPEDIENT_URL;
-const deleteExpedientUrl = import.meta.env.VITE_DELETE_EXPEDIENT_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+const apiExpedientsUrl = import.meta.env.VITE_API_EXPEDIENTS_URL;
 
+const createExpedientUrl = backendUrl + apiExpedientsUrl;
+const getExpedientsUrl = backendUrl + apiExpedientsUrl;
+const updateExpedientUrl = backendUrl + apiExpedientsUrl;
+const deleteExpedientUrl = backendUrl + apiExpedientsUrl;
+
+// eslint-disable-next-line react/prop-types
 const ExpedientsProvider = ({ children }) => {
     const [expedients, setExpedients] = useState([]);
     const [expedient, setExpedient] = useState({});
@@ -55,6 +59,7 @@ const ExpedientsProvider = ({ children }) => {
         } else {
             try {
                 const { data } = await axios.post(createExpedientUrl, expedient, config);
+                // eslint-disable-next-line no-unused-vars
                 const { createdAt, updatedAt, __v, ...expedientSaved } = data;
                 setExpedients([expedientSaved, ...expedients]);
             } catch (error) {
@@ -78,6 +83,7 @@ const ExpedientsProvider = ({ children }) => {
                 }
             }
             try {
+                // eslint-disable-next-line no-unused-vars
                 const { data } = await axios.delete(deleteExpedientUrl + `/${id}`, config);
                 const updateExpedient = expedients.filter(expedientState => expedientState._id !== id);
                 setExpedients(updateExpedient);

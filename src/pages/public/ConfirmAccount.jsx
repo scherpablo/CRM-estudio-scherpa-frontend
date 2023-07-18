@@ -3,7 +3,10 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import Alerts from "../../components/Alerts";
 
-const confirmAccountUrl = import.meta.env.VITE_CONFIRM_ACCOUNT_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+const apiAdminsUrl = import.meta.env.VITE_API_ADMINS_URL;
+
+const confirmAccountUrl = backendUrl + apiAdminsUrl + `/confirm`;
 
 const ConfirmAccount = () => {
     const [accountConfirmed, setAccountConfirmed] = useState(false);

@@ -6,10 +6,13 @@ import axios from "axios";
 
 const ClientsContext = createContext();
 
-const createClientUrl = import.meta.env.VITE_CREATE_CLIENT_URL;
-const getClienstUrl = import.meta.env.VITE_GET_CLIENTS_URL;
-const updateClientUrl = import.meta.env.VITE_UPDATE_CLIENT_URL;
-const deleteClientUrl = import.meta.env.VITE_DELETE_CLIENT_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+const apiClientsUrl = import.meta.env.VITE_API_CLIENTS_URL;
+
+const createClientUrl = backendUrl + apiClientsUrl;
+const getClienstUrl = backendUrl + apiClientsUrl;
+const updateClientUrl = backendUrl + apiClientsUrl;
+const deleteClientUrl = backendUrl + apiClientsUrl;
 
 const ClientsProvider = ({ children }) => {
     const [clients, setClients] = useState([]);

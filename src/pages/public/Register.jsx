@@ -3,7 +3,10 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Alerts from "../../components/Alerts";
 
-const registerUrl = import.meta.env.VITE_REGISTER_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+const apiAdminsUrl = import.meta.env.VITE_API_ADMINS_URL;
+
+const registerUrl = backendUrl + apiAdminsUrl;
 
 const Register = () => {
     const [name, setName] = useState("");
