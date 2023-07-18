@@ -4,7 +4,8 @@ import axios from "axios";
 
 const ExpedientsContext = createContext();
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL;
+// const backendUrl = import.meta.env.VITE_BACKEND_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL_PROD;
 const apiExpedientsUrl = import.meta.env.VITE_API_EXPEDIENTS_URL;
 
 const createExpedientUrl = backendUrl + apiExpedientsUrl;

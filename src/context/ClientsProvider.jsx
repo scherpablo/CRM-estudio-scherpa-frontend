@@ -6,7 +6,8 @@ import axios from "axios";
 
 const ClientsContext = createContext();
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL;
+// const backendUrl = import.meta.env.VITE_BACKEND_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL_PROD;
 const apiClientsUrl = import.meta.env.VITE_API_CLIENTS_URL;
 
 const createClientUrl = backendUrl + apiClientsUrl;
