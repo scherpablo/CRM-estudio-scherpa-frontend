@@ -4,10 +4,10 @@ import { Link, useNavigate } from "react-router-dom"
 import Alerts from "../../components/Alerts"
 import useAuth from "../../hooks/useAuth"
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL;
+const backendUrl = import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_BACKEND_URL_PROD;
 const apiAdminsUrl = import.meta.env.VITE_API_ADMINS_URL;
 
-const authUserUrl = backendUrl + apiAdminsUrl + `/login`;
+// const authUserUrl = backendUrl + apiAdminsUrl + `/login`;
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -38,7 +38,7 @@ const Login = () => {
         }
 
         try {
-            const { data } = await axios.post(authUserUrl, { email, password });
+            const { data } = await axios.post(backendUrl + apiAdminsUrl + `/login`, { email, password });
             localStorage.setItem("token", data.token);
             setEmail("");
             setPassword("");
