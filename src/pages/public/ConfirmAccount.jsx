@@ -41,7 +41,7 @@ const ConfirmAccount = () => {
     return (
         <>
             <div className="items-center">
-                <h1 className="text-yellow-600 font-black text-7xl text-center">Crea tu cuenta y administra tus <span className="text-white">clientes</span></h1>
+                <h1 className="text-yellow-600 font-black text-5xl lg:text-7xl text-center">Crea tu cuenta y administra tus <span className="text-white">clientes</span></h1>
             </div>
             <div className="p-8 mt-5 md:mt5 shadow-lg bg-neutral-800 rounded-lg">
                 {!loading && <Alerts

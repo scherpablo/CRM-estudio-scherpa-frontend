@@ -8,7 +8,7 @@ const Header = () => {
         <header className="py-10 bg-yellow-600 pl-10 pr-10">
             <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center">
                 <Link to="/admin">
-                    <h1 className="text-3xl font-bold mb-5 lg:mb-0 text-center">Administrador de {''}
+                    <h1 className="text-3xl font-bold mb-5 lg:mb-0 text-center hidden md:block">Administrador de {''}
                         <span
                             className="text-white font-black">Clientes
                         </span>

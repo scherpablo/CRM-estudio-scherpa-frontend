@@ -54,7 +54,7 @@ const ForgotPassword = () => {
     return (
         <>
             <div>
-                <h1 className="text-yellow-600 font-black text-7xl text-center">Recupera tu cuenta y no pierdas tus <span className="text-white">clientes</span></h1>
+                <h1 className="text-yellow-600 font-black text-5xl lg:text-7xl text-center lg:mt-14">Recupera tu cuenta y no pierdas tus <span className="text-white">clientes</span></h1>
             </div>
             <div className="p-8 mt-20 md:mt5 shadow-lg bg-neutral-800 rounded-lg">
                 {msg && <Alerts

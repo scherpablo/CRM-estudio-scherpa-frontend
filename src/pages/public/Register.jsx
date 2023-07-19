@@ -68,8 +68,8 @@ const Register = () => {
     return (
         <>
             <div>
-                <h1 className="text-yellow-600 font-black text-7xl text-center">Crea tu cuenta y administra tus <span className="text-white">clientes</span></h1>
-                <p className="text-center text-white mt-5 text-xl">Estudio Jurídico Dra. <span className="text-yellow-600 uppercase font-bold">Scherpa Lis</span> </p>
+                <h1 className="text-yellow-600 font-black text-5xl lg:text-7xl text-center">Crea tu cuenta y administra tus <span className="text-white">clientes</span></h1>
+                <p className="text-center text-white mt-5 text-md lg:text-xl">Estudio Jurídico Dra. <span className="text-yellow-600 uppercase font-bold">Scherpa Lis</span> </p>
             </div>
             <div className="p-8 mt-5 md:mt5 shadow-lg bg-neutral-800 rounded-lg">
                 {msg && <Alerts
