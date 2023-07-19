@@ -20,7 +20,8 @@ const ConfirmAccount = () => {
     useEffect(() => {
         const confirmAccount = async () => {
             try {
-                const url = `${confirmAccountUrl}/${token}`;
+                // const url = `${confirmAccountUrl}/${token}`;
+                const url = confirmAccountUrl + `/${token}`;
                 const { data } = await axios(url);
                 setAccountConfirmed(true);
                 setAlert({
