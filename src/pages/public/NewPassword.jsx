@@ -80,7 +80,7 @@ const NewPassword = () => {
             <div>
                 <h1 className="text-yellow-600 font-black text-5xl lg:text-7xl text-center">Reestablece tu contraseña y continua administrando tus <span className="text-white">clientes</span></h1>
             </div>
-            <div className="p-8 mt-20 md:mt5 shadow-lg bg-neutral-800 rounded-lg">
+            <div className="p-5 mt-8 shadow-lg bg-neutral-800 rounded-lg">
                 {msg && <Alerts
                     alert={alert}
                 />}

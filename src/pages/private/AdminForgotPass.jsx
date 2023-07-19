@@ -47,7 +47,7 @@ const AdminForgotPass = () => {
             <h2 className="text-center font-bold text-4xl mt-10 text-white">Cambia tu Contraseña</h2>
             <p className="text-center text-white text-xl mt-5 mb-10">Modifíca tu <span className="text-yellow-600 font-bold">contraseña aquí</span></p>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center px-5">
                 <div className="w-full md:w-1/2 bg-neutral-800 rounded-lg p-5">
                     {msg && <Alerts
                         alert={alert}
