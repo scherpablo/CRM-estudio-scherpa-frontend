@@ -4,6 +4,7 @@ import Clients from "../../components/ClientsList";
 
 const ManageClients = () => {
     const [showForm, setShowForm] = useState(false);
+
     return (
         <div className="flex flex-col md:flex-row">
             <button

@@ -1,9 +1,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+import { useState } from "react"
 import useClients from "../hooks/useClients"
+import FormMobile from "./ClientsFormMobile"
 
 const Client = ({ client }) => {
     const { setEdition, deleteClient  } = useClients()
+    const [showForm, setShowForm] = useState(false);
 
     const { name, lastName, cuit, birthdate, email, phone, address, location, postalCode, anses, afip, _id } = client
 
@@ -21,6 +24,11 @@ const Client = ({ client }) => {
         }
         return newDate.toLocaleDateString('es-ES', options)
     }
+
+    const handleEditClick = () => {
+        setShowForm(!showForm);
+        setEdition(client);
+    };
 
     return (
         <div className="bg-neutral-800 shadow-md rounded-lg p-5 mx-5 my-5">
@@ -61,7 +69,8 @@ const Client = ({ client }) => {
                 <button
                     className="bg-yellow-600 py-2 px-5 rounded-md text-white uppercase font-bold my-5 hover:cursor-pointer hover:bg-yellow-800"
                     type="button"
-                    onClick={() => setEdition(client)}
+                    onClick={handleEditClick}
+                    // onClick={() => setEdition(client)}
                 >Editar
                 </button>
                 <button
@@ -71,6 +80,7 @@ const Client = ({ client }) => {
                 >Eliminar
                 </button>
             </div>
+            {showForm && <FormMobile />}
         </div>
     )
 }
