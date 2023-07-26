@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import Alerts from "./Alerts";
 import useClients from "../hooks/useClients";
 
-const Form = () => {
+// eslint-disable-next-line react/prop-types
+const Form = ({ onSubmitForm }) => {
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
     const [cuit, setCuit] = useState('');
@@ -86,6 +87,7 @@ const Form = () => {
         setTimeout(() => {
             setAlert({});
             setId(null);
+            onSubmitForm();
         }, 3000);
 
         setName('');

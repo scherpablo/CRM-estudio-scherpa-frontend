@@ -73,6 +73,17 @@ const ExpedientsProvider = ({ children }) => {
         setExpedient(expedient)
     }
 
+    const setCancelEdition = () => {
+        setExpedient({
+            number: '',
+            type: '',
+            law: '',
+            state: '',
+            startDate: null,
+            clientRelation: '',
+        })
+    }
+
     const deleteExpedient = async (id) => {
         const confirmDelete = confirm('¿Deseas eliminar este cliente?');
         if (confirmDelete) {
@@ -100,6 +111,7 @@ const ExpedientsProvider = ({ children }) => {
                 expedients,
                 expedientSave,
                 setEdition,
+                setCancelEdition,
                 expedient,
                 deleteExpedient
             }}

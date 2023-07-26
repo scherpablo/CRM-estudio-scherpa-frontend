@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import Alerts from "../components/Alerts";
 import useExpedients from "../hooks/useExpedients";
 
-const ExpedientsForm = () => {
+// eslint-disable-next-line react/prop-types
+const ExpedientsForm = ({ onSubmitForm }) => {
     const [number, setNumber] = useState('');
     const [type, setType] = useState('');
     const [law, setLaw] = useState('');
@@ -71,6 +72,7 @@ const ExpedientsForm = () => {
         setTimeout(() => {
             setAlert({});
             setId(null);
+            onSubmitForm();
         }, 3000);
         
         setNumber("");
@@ -85,17 +87,17 @@ const ExpedientsForm = () => {
 
     return (
         <>
-            <h2 className="font-black text-3xl text-center text-white mb-5">Administrador de expedientes</h2>
+            <h2 className="font-black text-3xl text-center text-white mb-5 hidden md:block">Administrador de expedientes</h2>
 
             <p
-                className="text-md font-bold text-center text-white">
+                className="text-md font-bold text-center text-white hidden md:block">
                 Agregar y Administrar
                 <span
                     className="text-yellow-600 font-bold"> Expedientes
                 </span>
             </p>
             <form
-                className="rounded-lg py-5 px-5 mb-10 lg:mb-0 bg-neutral-800 mx-5 my-5"
+                className="rounded-lg md:py-5 md:px-5 md:mb-0 bg-neutral-800 mx-5 my-5"
                 onSubmit={handleSubmit}
             >
                 <div className="mt-5">

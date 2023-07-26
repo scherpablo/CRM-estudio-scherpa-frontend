@@ -34,12 +34,18 @@ const Client = ({ client }) => {
         if (isEditing) {
             setCancelEdition(client);
             setIsEditing(false);
-            handleShowForm();
+            // handleShowForm();
         } else {
             setEdition(client);
             setIsEditing(true);
-            handleShowForm();
+            // handleShowForm();
         }
+        handleShowForm();
+    };
+
+    const handleFormSubmit = () => {
+        setIsEditing(false);
+        setShowForm(false);
     };
 
     return (
@@ -79,8 +85,7 @@ const Client = ({ client }) => {
             </p>
             <div className="flex justify-between">
                 <button
-                    // className="bg-yellow-600 py-2 px-5 rounded-md text-white uppercase font-bold my-5 hover:cursor-pointer hover:bg-yellow-800"
-                    className={`bg-${isEditing ? 'blue' : 'yellow'}-600 py-2 px-5 rounded-md text-white uppercase font-bold my-5 hover:cursor-pointer hover:bg-${isEditing ? 'blue' : 'yellow'}-800`}
+                    className={`bg-${isEditing ? 'yellow' : 'yellow'}-600 py-2 px-5 rounded-md text-white uppercase font-bold my-5 hover:cursor-pointer hover:bg-${isEditing ? 'yellow' : 'yellow'}-800`}
                     type="button"
                     onClick={handleEditCancelClick}
                 >
@@ -95,7 +100,7 @@ const Client = ({ client }) => {
                 </button>
             </div>
             <div className="md:hidden mb-0">
-                {showForm && <Form />}
+                {showForm && <Form onSubmitForm={handleFormSubmit} />}
             </div>
         </div>
     )
