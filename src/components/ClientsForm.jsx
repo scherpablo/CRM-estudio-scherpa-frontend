@@ -105,17 +105,17 @@ const Form = () => {
 
     return (
         <>
-            <h2 className="font-black text-3xl text-center text-white mb-5">Administrador de clientes</h2>
+            <h2 className="font-black text-3xl text-center text-white mb-5 hidden md:block">Administrador de clientes</h2>
 
             <p
-                className="text-md font-bold text-center text-white">
+                className="text-md font-bold text-center text-white hidden md:block">
                 Agregar y Administrar
                 <span
                     className="text-yellow-600 font-bold"> Clientes
                 </span>
             </p>
             <form
-                className="rounded-lg py-5 px-5 mb-10 lg:mb-0 bg-neutral-800 mx-5 my-5"
+                className="rounded-lg md:py-5 md:px-5 md:mb-0 bg-neutral-800 mx-5 my-5"
                 onSubmit={handleSubmit}
             >
                 <div className="mt-5">

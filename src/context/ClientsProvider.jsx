@@ -7,7 +7,6 @@ import axios from "axios";
 const ClientsContext = createContext();
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_BACKEND_URL_PROD;
-// const backendUrl = import.meta.env.VITE_BACKEND_URL_PROD;
 const apiClientsUrl = import.meta.env.VITE_API_CLIENTS_URL;
 
 const createClientUrl = backendUrl + apiClientsUrl;
@@ -72,6 +71,22 @@ const ClientsProvider = ({ children }) => {
         setClient(client)
     }
 
+    const setCancelEdition = () => {
+        setClient({
+            name: '',
+            lastName: '',
+            cuit: '',
+            birthdate: null,
+            email: '',
+            phone: '',
+            address: '',
+            location: '',
+            postalCode: '',
+            anses: '',
+            afip: '',
+        })
+    }
+
     const deleteClient = async (id) => {
         const confirmDelete = confirm('¿Deseas eliminar este cliente?');
         if (confirmDelete) {
@@ -98,6 +113,7 @@ const ClientsProvider = ({ children }) => {
                 clients,
                 clientSave,
                 setEdition,
+                setCancelEdition,
                 client,
                 deleteClient
             }}

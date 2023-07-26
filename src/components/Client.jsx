@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useState } from "react"
+import { useState } from "react";
 import useClients from "../hooks/useClients"
-import FormMobile from "./ClientsFormMobile"
+import Form from "./ClientsForm";
 
 const Client = ({ client }) => {
-    const { setEdition, deleteClient  } = useClients()
+    const { setEdition, setCancelEdition, deleteClient } = useClients()
+    const [isEditing, setIsEditing] = useState(false);
     const [showForm, setShowForm] = useState(false);
 
     const { name, lastName, cuit, birthdate, email, phone, address, location, postalCode, anses, afip, _id } = client
@@ -25,9 +26,20 @@ const Client = ({ client }) => {
         return newDate.toLocaleDateString('es-ES', options)
     }
 
-    const handleEditClick = () => {
+    const handleShowForm = () => {
         setShowForm(!showForm);
-        setEdition(client);
+    };
+
+    const handleEditCancelClick = () => {
+        if (isEditing) {
+            setCancelEdition(client);
+            setIsEditing(false);
+            handleShowForm();
+        } else {
+            setEdition(client);
+            setIsEditing(true);
+            handleShowForm();
+        }
     };
 
     return (
@@ -67,20 +79,24 @@ const Client = ({ client }) => {
             </p>
             <div className="flex justify-between">
                 <button
-                    className="bg-yellow-600 py-2 px-5 rounded-md text-white uppercase font-bold my-5 hover:cursor-pointer hover:bg-yellow-800"
+                    // className="bg-yellow-600 py-2 px-5 rounded-md text-white uppercase font-bold my-5 hover:cursor-pointer hover:bg-yellow-800"
+                    className={`bg-${isEditing ? 'blue' : 'yellow'}-600 py-2 px-5 rounded-md text-white uppercase font-bold my-5 hover:cursor-pointer hover:bg-${isEditing ? 'blue' : 'yellow'}-800`}
                     type="button"
-                    onClick={handleEditClick}
-                    // onClick={() => setEdition(client)}
-                >Editar
+                    onClick={handleEditCancelClick}
+                >
+                    {isEditing ? 'Cancelar' : 'Editar'}
                 </button>
                 <button
                     className="bg-red-600 py-2 px-5 rounded-md text-white uppercase font-bold my-5 hover:cursor-pointer hover:bg-red-800"
                     type="button"
                     onClick={() => deleteClient(_id)}
-                >Eliminar
+                >
+                    Eliminar
                 </button>
             </div>
-            {showForm && <FormMobile />}
+            <div className="md:hidden mb-0">
+                {showForm && <Form />}
+            </div>
         </div>
     )
 }
